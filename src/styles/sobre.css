@@ -1,0 +1,13 @@
+/* ============================= */
+/* SOBRE                         */
+/* ============================= */
+.sobre-content{
+  max-width: 62ch;
+  color: var(--muted);
+  display:flex;
+  flex-direction:column;
+  gap: 1.1rem;
+  font-size: 1.02rem;
+}
+
+.sobre-content strong{ color: var(--white); font-weight:600; }

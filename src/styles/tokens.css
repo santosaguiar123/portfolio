@@ -1,0 +1,20 @@
+/* ============================= */
+/* TOKENS — cores, fontes, etc.  */
+/* ============================= */
+:root{
+  --bg:            #0a0a0a;
+  --bg-elevated:   #121519;
+  --bg-elevated-2: #171b20;
+  --blue:          #3e7cb1;
+  --blue-dim:      #2a5578;
+  --yellow:        #ffd43b;
+  --white:         #f5f5f3;
+  --muted:         rgba(245,245,243,0.62);
+  --border:        rgba(62,124,177,0.25);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Manrope', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --nav-h: 64px;
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seu Nome — Portfólio</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <!-- ============================= -->
+  <!-- NAVBAR                        -->
+  <!-- ============================= -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="brand">~/portfolio<span>_</span></a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-nav>Home</a></li>
+      <li><a href="#sobre" data-nav>Sobre</a></li>
+      <li><a href="#skills" data-nav>Skills</a></li>
+      <li><a href="#projetos" data-nav>Projetos</a></li>
+      <li><a href="#contato" data-nav>Contate-me</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================= -->
+  <!-- HOME                          -->
+  <!-- ============================= -->
+  <header id="home" class="hero">
+    <div class="avatar-frame">
+      <div class="avatar-inner">
+        <!-- SUBSTITUA por: <img src="sua-foto.jpg" alt="Foto de [Seu Nome]"> -->
+        <i class="fa-solid fa-user avatar-placeholder"></i>
+      </div>
+    </div>
+
+    <h1 class="hero-name">Seu Nome Aqui</h1>
+    <p class="hero-role">// estudante de ciência da computação<span class="cursor"></span></p>
+
+    <a href="#sobre" class="scroll-cue" aria-label="Rolar para a próxima seção">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </header>
+
+  <!-- ============================= -->
+  <!-- SOBRE MIM                     -->
+  <!-- ============================= -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">sobre-mim.md</span>
+        <h2>Sobre mim</h2>
+      </div>
+
+      <div class="sobre-content">
+        <p>
+          <!-- SUBSTITUA: breve apresentação pessoal -->
+          Escreva aqui um parágrafo contando quem você é, o que te trouxe até a
+          computação e o que te motiva a estudar e programar.
+        </p>
+        <p>
+          <!-- SUBSTITUA: trajetória acadêmica/profissional -->
+          Neste segundo parágrafo, fale sobre sua <strong>trajetória</strong>: cursos,
+          projetos pessoais, experiências e o que você busca em um estágio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- SKILLS                        -->
+  <!-- ============================= -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">skills.json</span>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+          <h3>Python</h3>
+          <p>Descreva rapidamente sua experiência com Python: projetos, bibliotecas, tempo de prática.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+          <h3>JavaScript</h3>
+          <p>Descreva rapidamente sua experiência com JavaScript: front-end, back-end ou ambos.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Banco de Dados</h3>
+          <p>Descreva rapidamente sua experiência com bancos de dados: SQL, modelagem, projetos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- PROJETOS                      -->
+  <!-- ============================= -->
+  <section id="projetos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">projetos/</span>
+        <h2>Projetos</h2>
+      </div>
+
+      <div class="projects-wrap">
+        <div class="projects-sidebar">
+          <span class="sidebar-label">arquivos</span>
+
+          <button class="project-btn is-active" data-project="p1">
+            <i class="fa-regular fa-file-code"></i> projeto-01.js
+          </button>
+          <button class="project-btn" data-project="p2">
+            <i class="fa-regular fa-file-code"></i> projeto-02.js
+          </button>
+          <button class="project-btn" data-project="p3">
+            <i class="fa-regular fa-file-code"></i> projeto-03.js
+          </button>
+        </div>
+
+        <div class="projects-content">
+          <div class="project-panel is-active" id="p1">
+            <h3>Nome do Projeto 1</h3>
+            <p><!-- SUBSTITUA: descrição do projeto 1 -->Descreva aqui o problema que o projeto resolve, as principais funcionalidades e seu papel no desenvolvimento.</p>
+            <div class="tech-tags"><span>Tecnologia 1</span><span>Tecnologia 2</span></div>
+            <!-- SUBSTITUA o href pelo link real do projeto -->
+            <a href="#" class="btn-outline" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
+          </div>
+
+          <div class="project-panel" id="p2">
+            <h3>Nome do Projeto 2</h3>
+            <p><!-- SUBSTITUA: descrição do projeto 2 -->Descreva aqui o problema que o projeto resolve, as principais funcionalidades e seu papel no desenvolvimento.</p>
+            <div class="tech-tags"><span>Tecnologia 1</span><span>Tecnologia 2</span></div>
+            <a href="#" class="btn-outline" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
+          </div>
+
+          <div class="project-panel" id="p3">
+            <h3>Nome do Projeto 3</h3>
+            <p><!-- SUBSTITUA: descrição do projeto 3 -->Descreva aqui o problema que o projeto resolve, as principais funcionalidades e seu papel no desenvolvimento.</p>
+            <div class="tech-tags"><span>Tecnologia 1</span><span>Tecnologia 2</span></div>
+            <a href="#" class="btn-outline" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- CONTATO                       -->
+  <!-- ============================= -->
+  <section id="contato" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">contato.sh</span>
+        <h2>Contate-me</h2>
+      </div>
+
+      <div class="contact-grid">
+        <!-- SUBSTITUA o e-mail -->
+        <a href="mailto:seuemail@exemplo.com" class="contact-card">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <h3>Email</h3>
+          <span>seuemail@exemplo.com</span>
+        </a>
+
+        <!-- SUBSTITUA o link do LinkedIn -->
+        <a href="https://linkedin.com/in/seunome" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <h3>LinkedIn</h3>
+          <span>linkedin.com/in/seunome</span>
+        </a>
+
+        <!-- SUBSTITUA o link do GitHub -->
+        <a href="https://github.com/seunome" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+          <h3>GitHub</h3>
+          <span>github.com/seunome</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 — Seu Nome. Feito com HTML e CSS.
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+</html>

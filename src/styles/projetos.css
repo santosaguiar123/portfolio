@@ -1,0 +1,119 @@
+/* ============================= */
+/* PROJETOS                      */
+/* ============================= */
+.projects-wrap{
+  display:grid;
+  grid-template-columns: 230px 1fr;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow:hidden;
+}
+
+@media (max-width: 700px){
+  .projects-wrap{ grid-template-columns: 1fr; }
+}
+
+.projects-sidebar{
+  background: rgba(0,0,0,0.32);
+  border-right: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+
+@media (max-width: 700px){
+  .projects-sidebar{
+    border-right:none;
+    border-bottom: 1px solid var(--border);
+    display:flex;
+    overflow-x:auto;
+    padding: 0.75rem;
+    gap: 0.4rem;
+  }
+}
+
+.projects-sidebar .sidebar-label{
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding: 0 1.25rem 0.75rem;
+}
+
+@media (max-width: 700px){
+  .projects-sidebar .sidebar-label{ display:none; }
+}
+
+.project-btn{
+  display:flex;
+  align-items:center;
+  gap: 0.6rem;
+  width:100%;
+  background:none;
+  border:none;
+  border-left: 3px solid transparent;
+  text-align:left;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.75rem 1.15rem;
+  cursor:pointer;
+  white-space:nowrap;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+@media (max-width: 700px){
+  .project-btn{ border-left:none; border-bottom:3px solid transparent; border-radius:6px; }
+}
+
+.project-btn i{ color: var(--blue); font-size: 0.8rem; }
+
+.project-btn:hover{ background: rgba(62,124,177,0.1); color: var(--white); }
+
+.project-btn.is-active{
+  color: var(--yellow);
+  border-color: var(--yellow);
+  background: rgba(255,212,59,0.06);
+}
+
+.projects-content{ padding: 2.25rem clamp(1.25rem, 4vw, 2.5rem); min-height: 260px; }
+
+.project-panel{ display:none; }
+.project-panel.is-active{ display:block; }
+
+.project-panel h3{
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.project-panel p{
+  color: var(--muted);
+  max-width: 60ch;
+  margin-bottom: 1.3rem;
+}
+
+.tech-tags{ display:flex; flex-wrap:wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+.tech-tags span{
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--blue);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.6rem;
+  border-radius: 5px;
+}
+
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--white);
+  text-decoration:none;
+  border: 1px solid var(--blue);
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.btn-outline:hover{ background: rgba(62,124,177,0.15); border-color: var(--yellow); }
