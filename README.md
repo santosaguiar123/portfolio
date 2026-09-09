@@ -44,12 +44,12 @@ portfolio/
 
 ## Status do projeto
 
-Este é o resultado da **Fase 1** do roadmap (fundação): o protótipo de arquivo
-único foi modularizado em um projeto Vite organizado, **sem nenhuma mudança de
-comportamento ainda**. Os bugs conhecidos (indicador de seção ativa, links dos
-projetos e do contato) são corrigidos nas próximas fases.
+As **Fases 1 e 2** do roadmap estão implementadas: o protótipo foi modularizado
+em um projeto Vite e o indicador do menu acompanha a seção visível, incluindo
+acessos por âncora e o fim da página. O link ativo também recebe `aria-current`
+para leitores de tela. Os links dos projetos e do contato ficam para as próximas fases.
 
-- [ ] Fase 2 — corrigir o indicador de seção ativa no menu
+- [x] Fase 2 — corrigir o indicador de seção ativa no menu
 - [ ] Fase 3 — ligar os botões de projeto aos repositórios reais
 - [ ] Fase 4 — ajustar os redirecionamentos da seção de contato
 - [ ] Fase 5 — SEO, acessibilidade e deploy automático
