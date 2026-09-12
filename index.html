@@ -6,6 +6,7 @@
 <title>Seu Nome — Portfólio</title>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/src/styles/main.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,39 +129,12 @@
         <div class="projects-sidebar">
           <span class="sidebar-label">arquivos</span>
 
-          <button class="project-btn is-active" data-project="p1">
-            <i class="fa-regular fa-file-code"></i> projeto-01.js
-          </button>
-          <button class="project-btn" data-project="p2">
-            <i class="fa-regular fa-file-code"></i> projeto-02.js
-          </button>
-          <button class="project-btn" data-project="p3">
-            <i class="fa-regular fa-file-code"></i> projeto-03.js
-          </button>
+          <!-- Botões gerados a partir de src/data/projects.js. -->
         </div>
 
         <div class="projects-content">
-          <div class="project-panel is-active" id="p1">
-            <h3>Nome do Projeto 1</h3>
-            <p><!-- SUBSTITUA: descrição do projeto 1 -->Descreva aqui o problema que o projeto resolve, as principais funcionalidades e seu papel no desenvolvimento.</p>
-            <div class="tech-tags"><span>Tecnologia 1</span><span>Tecnologia 2</span></div>
-            <!-- SUBSTITUA o href pelo link real do projeto -->
-            <a href="#" class="btn-outline" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
-          </div>
-
-          <div class="project-panel" id="p2">
-            <h3>Nome do Projeto 2</h3>
-            <p><!-- SUBSTITUA: descrição do projeto 2 -->Descreva aqui o problema que o projeto resolve, as principais funcionalidades e seu papel no desenvolvimento.</p>
-            <div class="tech-tags"><span>Tecnologia 1</span><span>Tecnologia 2</span></div>
-            <a href="#" class="btn-outline" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
-          </div>
-
-          <div class="project-panel" id="p3">
-            <h3>Nome do Projeto 3</h3>
-            <p><!-- SUBSTITUA: descrição do projeto 3 -->Descreva aqui o problema que o projeto resolve, as principais funcionalidades e seu papel no desenvolvimento.</p>
-            <div class="tech-tags"><span>Tecnologia 1</span><span>Tecnologia 2</span></div>
-            <a href="#" class="btn-outline" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
-          </div>
+          <!-- Painéis gerados a partir de src/data/projects.js. -->
+          <noscript>Ative o JavaScript para visualizar os projetos.</noscript>
         </div>
       </div>
     </div>
@@ -177,26 +151,24 @@
       </div>
 
       <div class="contact-grid">
-        <!-- SUBSTITUA o e-mail -->
-        <a href="mailto:seuemail@exemplo.com" class="contact-card">
+        <a class="contact-card" data-contact="email" aria-disabled="true" aria-label="Email indisponível">
           <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
           <h3>Email</h3>
-          <span>seuemail@exemplo.com</span>
+          <span>Contato em breve</span>
         </a>
 
-        <!-- SUBSTITUA o link do LinkedIn -->
-        <a href="https://linkedin.com/in/seunome" target="_blank" rel="noopener" class="contact-card">
+        <a class="contact-card" data-contact="linkedin" target="_blank" rel="noopener noreferrer" aria-disabled="true" aria-label="LinkedIn indisponível">
           <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
           <h3>LinkedIn</h3>
-          <span>linkedin.com/in/seunome</span>
+          <span>Contato em breve</span>
         </a>
 
-        <!-- SUBSTITUA o link do GitHub -->
-        <a href="https://github.com/seunome" target="_blank" rel="noopener" class="contact-card">
+        <a class="contact-card" data-contact="github" target="_blank" rel="noopener noreferrer" aria-disabled="true" aria-label="GitHub indisponível">
           <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
           <h3>GitHub</h3>
-          <span>github.com/seunome</span>
+          <span>Contato em breve</span>
         </a>
+        <button type="button" class="contact-copy" disabled aria-live="polite">Copiar e-mail</button>
       </div>
     </div>
   </section>

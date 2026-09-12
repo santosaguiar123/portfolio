@@ -45,4 +45,25 @@
   font-family: var(--font-mono);
   font-size: 0.82rem;
   color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.contact-copy{
+  grid-column: 1;
+  justify-self: center;
+  padding: .55rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  color: var(--white);
+  font: inherit;
+  font-size: .82rem;
+  cursor: pointer;
+}
+
+.contact-copy:disabled{ opacity: .5; cursor: default; }
+.contact-copy:hover:not(:disabled){ border-color: var(--yellow); }
+.contact-card:focus-visible, .contact-copy:focus-visible{
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
 }

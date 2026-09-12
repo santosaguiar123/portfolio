@@ -1,3 +1,6 @@
 // Fonte única de verdade para os dados de contato.
-// Preenchido de verdade na Fase 4 (email, LinkedIn e GitHub reais).
-export const contact = { email: '', linkedin: '', github: '' };
+export const contact = {
+  email: 'contatorenansantos@outlook.com',
+  linkedin: 'https://www.linkedin.com/in/renan-santos-de-aguiar-25182a435/',
+  github: 'https://github.com/santosaguiar123',
+};
