@@ -4,6 +4,7 @@
 export const projects = [
   {
     id: 'p1',
+    buttonLabel: 'Atendimento',
     name: 'Atendimento Inteligente',
     description: 'Plataforma em desenvolvimento para automatizar o atendimento de pequenas e médias empresas. Inclui cadastro de empresas, autenticação e persistência de conversas, com integração de IA planejada para responder perguntas a partir do contexto de cada negócio.',
     techs: ['Python', 'Django REST Framework', 'PostgreSQL', 'React', 'TypeScript', 'Docker'],
@@ -11,6 +12,7 @@ export const projects = [
   },
   {
     id: 'p2',
+    buttonLabel: 'Biblioteca',
     name: 'API de Gerenciamento de Livros',
     description: 'API REST para cadastrar, consultar, atualizar e remover livros, com filtros por título e autor. Conta com persistência em SQLite, interface web, documentação Swagger e testes automatizados.',
     techs: ['Python', 'Flask', 'SQLite', 'Swagger'],
@@ -18,6 +20,7 @@ export const projects = [
   },
   {
     id: 'p3',
+    buttonLabel: 'Portfólio',
     name: 'Portfólio Interativo',
     description: 'Site pessoal para apresentar projetos, habilidades e trajetória. Desenvolvido com HTML, CSS e JavaScript modular, com navegação entre seções, menu responsivo e painéis de projetos configurados por dados.',
     techs: ['HTML5', 'CSS3', 'JavaScript', 'Vite'],

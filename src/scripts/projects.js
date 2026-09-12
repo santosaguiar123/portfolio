@@ -37,7 +37,7 @@ export function initProjects() {
     button.setAttribute('aria-controls', project.id);
     button.setAttribute('aria-label', `Mostrar projeto ${project.name}`);
     button.setAttribute('aria-pressed', String(index === 0));
-    const label = document.createTextNode(` projeto-${String(index + 1).padStart(2, '0')}.js`);
+    const label = document.createTextNode(` ${project.buttonLabel || project.name}`);
     button.append(createIcon('fa-regular fa-file-code'), label);
     sidebar.append(button);
 

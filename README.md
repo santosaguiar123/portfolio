@@ -44,15 +44,17 @@ portfolio/
 
 ## Status do projeto
 
-As **Fases 1, 2 e 3** do roadmap estão implementadas: o protótipo foi modularizado
+As **Fases 1, 2, 3 e 4** do roadmap estão implementadas: o protótipo foi modularizado
 em um projeto Vite e o indicador do menu acompanha a seção visível, incluindo
 acessos por âncora e o fim da página. O link ativo também recebe `aria-current`
 para leitores de tela. Os projetos são renderizados a partir de um arquivo de dados,
-com links para os repositórios em nova aba. Os contatos ficam para a próxima fase.
+com links para os repositórios em nova aba. Os contatos usam os dados de
+`src/data/contact.js`. A preparação da Fase 5 está implementada, com publicação
+e validações de navegador ainda pendentes.
 
 - [x] Fase 2 — corrigir o indicador de seção ativa no menu
 - [x] Fase 3 — ligar os botões de projeto aos repositórios reais
-- [ ] Fase 4 — ajustar os redirecionamentos da seção de contato
+- [x] Fase 4 — ajustar os redirecionamentos da seção de contato
 - [ ] Fase 5 — SEO, acessibilidade e deploy automático
 
 ## Como editar os projetos e links
@@ -83,8 +85,63 @@ ver uma página 404. Nenhum token é necessário ou deve ser colocado neste site
 
 ## Deploy
 
-_A preencher na Fase 5, quando o GitHub Actions + GitHub Pages estiverem
-configurados._
+O workflow [deploy.yml](.github/workflows/deploy.yml) publica automaticamente
+`dist/` a cada push em `main`, com jobs separados de build e deploy. Usa Node.js
+LTS mais recente, `npm ci`, `npm audit --audit-level=high`, `node --test` e
+`npm run build`, seguido das actions oficiais de upload e deploy do Pages.
+Também pode ser iniciado manualmente na aba Actions.
+
+Na primeira publicação, selecione **Settings → Pages → Build and deployment →
+Source → GitHub Actions** no repositório. Após enviar as alterações, acompanhe
+a execução em Actions. URL prevista: https://santosaguiar123.github.io/portfolio/.
+O pipeline segue o [padrão oficial do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+O Vite mantém `base: './'` para carregar os assets no subdiretório `/portfolio/`.
+As URLs de compartilhamento são absolutas. Se mudar o domínio ou o nome do
+repositório, atualize `index.html`, `public/robots.txt` e `public/sitemap.xml`.
+O sitemap contém apenas a URL canônica: as âncoras são seções da mesma página.
+Em um site de projeto, o robots.txt fica em `/portfolio/robots.txt`; os robôs
+consultam o arquivo da raiz do domínio. Para controlar o domínio inteiro,
+publique também o robots.txt no repositório `santosaguiar123.github.io`.
+
+Antes de considerar a publicação final concluída:
+
+- [ ] Substituir “Seu Nome” nos títulos e personalizar a descrição (TODO no head).
+- [ ] Substituir `public/og-image.png`: a imagem atual é um placeholder de 1200 × 630.
+- [ ] Confirmar o deploy público via HTTPS e a prévia ao compartilhar o link.
+- [ ] Rodar Lighthouse no build servido por `npm run preview`: meta 90+ em
+  Acessibilidade e Boas Práticas; revisar também Performance e SEO.
+- [ ] Conferir Chrome e Firefox em 375, 768 e 1440 px, incluindo menu,
+  scrollspy, troca de projetos, contatos, teclado e ausência de overflow.
+
+## Segurança
+
+O CSS do Font Awesome usa SRI (`integrity`) e `crossorigin="anonymous"`.
+O CSS dinâmico do Google Fonts não usa SRI; para eliminar essa dependência,
+uma alternativa futura é hospedar as fontes localmente. Links externos que
+abrem nova aba usam `rel="noopener noreferrer"`.
+
+Não inclua segredos no repositório nem em `public/`: tudo que vai para `dist/`
+é público. `.gitignore` exclui `node_modules`, `dist`, `.env` e `.env.*`
+(exceto `.env.example`, que deve conter apenas exemplos). Os arquivos rastreados
+não incluem `.env` nem `node_modules`; isso não substitui auditoria do histórico.
+Os dados de contato são públicos por finalidade e não exigem tokens.
+
+O workflow bloqueia deploy se a auditoria detectar severidade alta/crítica.
+Para corrigir, comece com `npm audit` e analise `npm audit fix --dry-run`;
+use `npm audit fix` apenas após revisar as mudanças e refaça build e testes.
+Evite `--force`, que pode trocar versões principais do Vite.
+
+O arquivo `.github/dependabot.yml` configura atualizações semanais de npm e
+GitHub Actions. Ative também **Dependabot alerts** nas configurações de
+segurança do GitHub; o arquivo não ativa essa opção da conta/repositório.
+
+GitHub Pages não permite cabeçalhos HTTP customizados. Em eventual migração
+para Netlify/Vercel, configurar CSP conforme os domínios realmente usados
+(Google Fonts e cdnjs), `X-Content-Type-Options: nosniff`,
+`Referrer-Policy: strict-origin-when-cross-origin` e `Permissions-Policy`
+restritiva. Confira HTTPS nas configurações do Pages, especialmente se usar
+domínio próprio.
 
 ## Licença
 

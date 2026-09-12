@@ -38,7 +38,9 @@ export function initContact() {
     const url = profileUrl(contact[key], host);
     if (!url) continue;
     card.href = url.href;
-    card.querySelector('span').textContent = url.href.replace(/^https:\/\//, '').replace(/\/$/, '');
+    card.querySelector('span').textContent = key === 'linkedin'
+      ? 'linkedin.com/in/renan-santos'
+      : url.href.replace(/^https:\/\//, '').replace(/\/$/, '');
     card.setAttribute('aria-label', `Abrir perfil no ${label} (nova aba)`);
     card.removeAttribute('aria-disabled');
   }
