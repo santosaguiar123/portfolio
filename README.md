@@ -28,10 +28,12 @@ npm run preview   # serve a pasta dist/ localmente, pra conferir o build
 
 ```
 portfolio/
-├── .github/workflows/     # pipeline de deploy automático (Fase 5)
+├── .github/workflows/     # pipeline de deploy automático
 ├── public/
 │   ├── favicon.svg
-│   └── og-image.png       # placeholder — troca na Fase 5
+│   ├── og-image.png       # imagem de compartilhamento
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── src/
 │   ├── main.js            # inicia os módulos JS
 │   ├── styles/             # CSS separado por seção
@@ -49,13 +51,15 @@ em um projeto Vite e o indicador do menu acompanha a seção visível, incluindo
 acessos por âncora e o fim da página. O link ativo também recebe `aria-current`
 para leitores de tela. Os projetos são renderizados a partir de um arquivo de dados,
 com links para os repositórios em nova aba. Os contatos usam os dados de
-`src/data/contact.js`. A preparação da Fase 5 está implementada, com publicação
-e validações de navegador ainda pendentes.
+`src/data/contact.js`. O site está publicado no GitHub Pages, com metadados de
+compartilhamento, ajustes de acessibilidade e deploy automático configurados.
+O visual foi conferido no celular e no desktop, e o Lighthouse atingiu **98 em
+Performance no build de produção**.
 
 - [x] Fase 2 — corrigir o indicador de seção ativa no menu
 - [x] Fase 3 — ligar os botões de projeto aos repositórios reais
 - [x] Fase 4 — ajustar os redirecionamentos da seção de contato
-- [ ] Fase 5 — SEO, acessibilidade e deploy automático
+- [x] Fase 5 — metadados SEO, ajustes de acessibilidade e deploy automático implementados
 
 ## Como editar os projetos e links
 
@@ -68,7 +72,8 @@ nesse array define a ordem dos botões e painéis:
 
 Para trocar um link, substitua o valor de `githubUrl` entre aspas pela URL completa
 do repositório, no formato `https://github.com/usuario/repositorio`. Também pode
-editar `name` (título), `description` (descrição) e `techs` (lista de tecnologias).
+editar `name` (título), `buttonLabel` (texto do botão), `description` (descrição)
+e `techs` (lista de tecnologias).
 Salve e confira com `npm run dev`; não é necessário alterar `index.html`.
 Para produção, gere um novo build com `npm run build`.
 
@@ -91,9 +96,9 @@ LTS mais recente, `npm ci`, `npm audit --audit-level=high`, `node --test` e
 `npm run build`, seguido das actions oficiais de upload e deploy do Pages.
 Também pode ser iniciado manualmente na aba Actions.
 
-Na primeira publicação, selecione **Settings → Pages → Build and deployment →
-Source → GitHub Actions** no repositório. Após enviar as alterações, acompanhe
-a execução em Actions. URL prevista: https://santosaguiar123.github.io/portfolio/.
+Site publicado: **https://santosaguiar123.github.io/portfolio/**.
+O Pages está configurado com **Settings → Pages → Build and deployment →
+Source → GitHub Actions**. Após cada push, acompanhe a atualização na aba Actions.
 O pipeline segue o [padrão oficial do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
 O Vite mantém `base: './'` para carregar os assets no subdiretório `/portfolio/`.
@@ -104,15 +109,20 @@ Em um site de projeto, o robots.txt fica em `/portfolio/robots.txt`; os robôs
 consultam o arquivo da raiz do domínio. Para controlar o domínio inteiro,
 publique também o robots.txt no repositório `santosaguiar123.github.io`.
 
-Antes de considerar a publicação final concluída:
+Preparação e publicação concluídas:
 
-- [ ] Substituir “Seu Nome” nos títulos e personalizar a descrição (TODO no head).
-- [ ] Substituir `public/og-image.png`: a imagem atual é um placeholder de 1200 × 630.
-- [ ] Confirmar o deploy público via HTTPS e a prévia ao compartilhar o link.
-- [ ] Rodar Lighthouse no build servido por `npm run preview`: meta 90+ em
-  Acessibilidade e Boas Práticas; revisar também Performance e SEO.
-- [ ] Conferir Chrome e Firefox em 375, 768 e 1440 px, incluindo menu,
-  scrollspy, troca de projetos, contatos, teclado e ausência de overflow.
+- [x] Nomes, descrições, skills e projetos personalizados.
+- [x] Imagem de compartilhamento substituída em `public/og-image.png`.
+- [x] Placeholder da foto removido e texto da Home centralizado.
+- [x] Visual conferido no celular e no desktop.
+- [x] Lighthouse executado no build de produção: Performance 98.
+- [x] Build de produção e dois testes de scrollspy aprovados.
+- [x] Auditoria npm executada sem vulnerabilidades na preparação do deploy.
+- [x] Deploy no GitHub Pages concluído com sucesso.
+
+A prévia efetiva em redes sociais/chats e os links na versão publicada ainda
+não têm validação registrada. A nota acima é de Performance; não representa
+uma medição das demais categorias do Lighthouse.
 
 ## Segurança
 
